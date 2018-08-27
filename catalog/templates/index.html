@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>City Library Demo Website</h1>
+  <p>This is a city Library supported by library council, powered by <em>Mozilla Developer Network</em>!</p>
+
+  <h2>library Overview </h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Books containing line:</strong> {{ num_book_line}}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instance_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Genres:</strong> {{ num_genres}}</li>
+  </ul>
+
+   <!-- <p>You have visited this page {{ num_of_visits }}{% if num_of_visits == 1 %} time{% else %} times{% endif %}.</p>-->
+
+    <p> {{ num_of_visits }} {% if num_of_visits == 1 %} person {% else %} persons {% endif %} have visited the site</p>
+{% endblock %}

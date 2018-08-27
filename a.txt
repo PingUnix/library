@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "catalog_book" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(200) NOT NULL, "summary" text NOT NULL, "isbn" varchar(13) NOT NULL, "author_id" integer NULL REFERENCES "catalog_author" ("id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO catalog_book VALUES(1,'coraline',replace(replace('This edition of New York Times bestselling and Newbery Medal-winning author Neil Gaiman’s modern classic, Coraline—also an Academy Award-nominated film—is enriched with a foreword from the author, a reader''s guide, and more.\r\nWhen Coraline steps through a door to find another house strangely similar to her own (only better), things seem marvelous.\r\n\r\nBut there''s another mother there, and another father, and they want her to stay and be their little girl. They want to change her and never let her go.\r\n\r\nCoraline will have to fight with all her wit and courage if she is to save herself and return to her ordinary life.','\r',char(13)),'\n',char(10)),'9780062205728',1);
+INSERT INTO catalog_book VALUES(2,'The Da Vinci Code',replace(replace('"Read the book and be enlightened." \r\n—The Washington Post Book World\r\n\r\n“A pulse-quickening, brain-teasing adventure.” \r\n—People\r\n!!!!!!!!!','\r',char(13)),'\n',char(10)),'0307474275',2);
+INSERT INTO catalog_book VALUES(3,'The Lost Symbol','werwerwer030747427503074742750307474275','0307474279',2);
+INSERT INTO catalog_book VALUES(4,'qqqqq','qqqqqqq','1111111',1);
+CREATE INDEX "catalog_book_author_id_b0849980" ON "catalog_book" ("author_id");
+COMMIT;
